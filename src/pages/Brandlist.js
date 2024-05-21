@@ -212,7 +212,7 @@ const Brandlist = () => {
 
                   <div className="d-flex justify-content-center">
                     {item.subbrand.map((subItem) => (
-                      <div key={subItem.id} className="d-flex justify-content-center flex-column  align-items-center shop-all-cards mx-5" onClick={() => {
+                      <div key={subItem.id} className="col-6 col-md-12 d-flex justify-content-center flex-column  align-items-center shop-all-cards mx-lg-5" onClick={() => {
                         handleCategoryClick(subItem)
                       }}>
                         <img src={subItem.imageUrl} alt={subItem.name} />
@@ -267,8 +267,8 @@ const Brandlist = () => {
                     <div style={{
 
                     }}>
-                      <h5>Price</h5>
-                      <Slider defaultValue={0} tooltip={{ open: true, formatter: value => `$${value * 100}` }} />
+                      {/* <h5>Price</h5>
+                      <Slider defaultValue={0} tooltip={{ open: true, formatter: value => `$${value * 100}` }} /> */}
 
                     </div>
                     <div className="position-absolute bottom-0 end-0">

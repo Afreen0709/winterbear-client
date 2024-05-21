@@ -157,7 +157,7 @@ const Header = () => {
 
           <div className="container-fluid">
 
-            <Carousel autoplay className={`col-md-10 d-block mx-auto ${navbarBg}`} dots={true}>
+            <Carousel autoplay className={`col-md-10 d-md-block d-none mx-auto ${navbarBg}`} dots={true}>
               {getCouponResponse && getCouponResponse?.coupons &&getCouponResponse?.coupons?.map((item, index) => item.isShow_display && (
                 <div className="col-md-4" key={index}>
                   {renderItem(item)}

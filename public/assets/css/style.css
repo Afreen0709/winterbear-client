@@ -353,6 +353,12 @@ input {
     width: 100%;
     text-align: center;
   }
+
+
+  .section-heading{
+margin-top: 80px;
+  }
+
 }
 
 
@@ -506,7 +512,7 @@ footer ul a {
 
   .copy-rights-img img {
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: 12px;
     width: 100%;
   }
