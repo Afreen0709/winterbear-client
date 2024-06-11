@@ -13,6 +13,8 @@ import { ShoppingCartOutlined, WalletOutlined } from "@ant-design/icons";
 import { Carousel, Select } from "antd";
 import Language from "../constant/Language";
 import SearchList from "./SearchList";
+import { Avatar, Badge, Space } from "antd";
+
 const { Option } = Select;
 
 function chunkArray(array, chunkSize) {
@@ -69,11 +71,9 @@ const Header = () => {
     loginerror: getprofileUserError,
     getprofile: getUserResponse,
   } = useSelector((state) => state.getprofile);
-  const {
-    data,
-    loading: bannerLoading,
-    error: bannerError,
-  } = useSelector((state) => state.data);
+  const { data, loading: bannerLoading, error: bannerError } = useSelector(
+    (state) => state.data
+  );
   const { CouponListsRes: getCouponResponse } = useSelector(
     (state) => state.CouponListsRes
   );
@@ -120,7 +120,7 @@ const Header = () => {
     const changeColorPosition = 100; // Change color after scrolling down 100 pixels
 
     if (scrollPosition > changeColorPosition) {
-      setNavbarBg("d-none");
+      setNavbarBg("fixed-top");
     } else {
       setNavbarBg("fixed-top");
     }
@@ -169,8 +169,9 @@ const Header = () => {
       <header>
         {/* Top Header */}
         <div
-          className={`top-header shadow-sm bg-white fixed-top ${navbarBg === "d-none" && "bg-white top-headers"
-            }`}
+          className={`top-header shadow-sm bg-white fixed-top ${
+            navbarBg === "d-none" && "bg-white top-headers"
+          }`}
         >
           <div className="container-fluid">
             {/* <Carousel autoplay className={col-md-10 d-block mx-auto ${navbarBg}} dots={true}>
@@ -188,13 +189,11 @@ const Header = () => {
                   <div className="row">
                     <div className="col-md-2">
                       <button
-
                         className="btn navbar  navbar-toggler border-0 p-0"
                         data-bs-toggle="offcanvas"
                         href="#offcanvasExample"
                         role="button"
                         aria-controls="offcanvasExample"
-
                       >
                         <span class="navbar-toggler-icon"></span>
                       </button>
@@ -255,8 +254,16 @@ const Header = () => {
                                   <div className="row">
                                     {data &&
                                       data.Brands.slice(0, 20).map((item) => (
-                                        <div key={item._id} className="col-6 col-md-3 mb-4 d-flex align-items-center">
-                                          <a href="" onClick={() => navigate(`/brand/${item._id}`)}>
+                                        <div
+                                          key={item._id}
+                                          className="col-6 col-md-3 mb-4 d-flex align-items-center"
+                                        >
+                                          <a
+                                            href=""
+                                            onClick={() =>
+                                              navigate(`/brand/${item._id}`)
+                                            }
+                                          >
                                             <img
                                               loading="lazy"
                                               src={item.imageUrl}
@@ -270,11 +277,12 @@ const Header = () => {
                                   <div
                                     className="header-all-cards mt-3 w-100 me-lg-5 "
                                     onClick={() => {
-                                      navigate('Allbrand');
+                                      navigate("Allbrand");
                                     }}
                                   >
                                     <span className="brand-namee me-5 view-mor-brand px-4 py-2 rounded">
-                                      More Brands <i className="fa-solid fa-arrow-right"></i>
+                                      More Brands{" "}
+                                      <i className="fa-solid fa-arrow-right"></i>
                                     </span>
                                   </div>
                                 </div>
@@ -352,8 +360,9 @@ const Header = () => {
                     <ul className="navbar-nav justify-content-end flex-grow-1 ps-md-3 ps-3">
                       <li className="nav-item pb-3">
                         <a
-                          className={`nav-link fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/"
                         >
                           HOME
@@ -362,8 +371,9 @@ const Header = () => {
 
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/about"
                         >
                           ABOUT
@@ -372,8 +382,9 @@ const Header = () => {
 
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 show-shop-all ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 show-shop-all ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/shop/0"
                         >
                           SHOP ALL
@@ -382,8 +393,9 @@ const Header = () => {
 
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/faqs"
                         >
                           FAQs
@@ -391,8 +403,9 @@ const Header = () => {
                       </li>
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/events"
                         >
                           EVENT
@@ -401,8 +414,9 @@ const Header = () => {
 
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/stores"
                         >
                           STORES
@@ -411,8 +425,9 @@ const Header = () => {
 
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/Allbrand"
                         >
                           BRAND DIRECTORY
@@ -421,20 +436,20 @@ const Header = () => {
 
                       <li className="nav-item">
                         <a
-                          className={`nav-link pb-3 fs-5 ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-5 ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="/Sns"
                         >
                           SNS
                         </a>
                       </li>
 
-
-
                       <li className="mt-md-5 nav-item">
                         <a
-                          className={`nav-link pb-3 fs-6 fw-normal ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-6 fw-normal ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="tel:9035576906"
                         >
                           <i className="fa-solid fa-phone-volume" />{" "}
@@ -443,8 +458,9 @@ const Header = () => {
                       </li>
                       <li className=" nav-item">
                         <a
-                          className={`nav-link pb-3 fs-6 fw-normal ${location.pathname === "/" ? "active" : ""
-                            }`}
+                          className={`nav-link pb-3 fs-6 fw-normal ${
+                            location.pathname === "/" ? "active" : ""
+                          }`}
                           href="mailto:hello@winterbear.in"
                         >
                           <i className="fa-regular fa-envelope" />{" "}
@@ -485,15 +501,12 @@ const Header = () => {
                       <div className="d-flex justify-content-between align-items-center">
                         {getUserResponse && getUserResponse.User ? (
                           <>
-
                             <p className="d-md-none d-block search-a mb-0">
-                            <i class="fa-solid fa-magnifying-glass"></i>
+                              <i class="fa-solid fa-magnifying-glass"></i>
                               <div className="mob-search ">
                                 <SearchList />
                               </div>
                             </p>
-
-
 
                             <a
                               href="/loyalty"
@@ -540,29 +553,32 @@ const Header = () => {
                               href="/cart"
                               className="text-decoration-none mx-2"
                             >
-                              <img src="../assets/images/icon_cart.svg" loading="lazy" />
+                              
+                              <Badge count={5}>
+                                <Avatar shape="square" size={25}  src="../assets/images/icon_cart.svg" />
+                              </Badge>
 
                               <ul className="mt-3 dropdown-menu text-small">
                                 <li>
                                   <Link
-                                    className={'dropdown-item'}
+                                    className={"dropdown-item"}
                                     to="/account"
                                   >
-                                  <i class="fa-solid fa-user"></i>  Account
+                                    <i class="fa-solid fa-user"></i> Account
                                   </Link>
                                 </li>
                                 <li>
                                   <hr className="dropdown-divider" />
                                 </li>
 
-                               
                                 <li>
                                   <a
                                     className="dropdown-item"
                                     onClick={logoutFunction}
                                     href="#"
                                   >
-                                   <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>{" "}
+                                    Sign out
                                   </a>
                                 </li>
                               </ul>
@@ -605,7 +621,10 @@ const Header = () => {
                               href="/cart"
                               className="text-decoration-none ps-3"
                             >
-                              <img src="../assets/images/icon_cart.svg" loading="lazy" />
+                              <img
+                                src="../assets/images/icon_cart.svg"
+                                loading="lazy"
+                              />
                               {/* <i className="fa-solid fa-bag-shopping" /> */}
                             </a>
                           </>

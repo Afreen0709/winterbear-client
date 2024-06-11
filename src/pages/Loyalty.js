@@ -42,12 +42,8 @@ const Loyalty = () => {
                     time you shop.{" "}
                   </h5>
                   <p className="my-4">
-                    <a href="#" className=" btn btn-light">
-                      Join Now
-                    </a>
-                    <a href="#" className=" btn btn-dark mx-3">
-                      Login
-                    </a>
+                   <img src="assets/images/Asset-12ldpi.png"/>
+                   <img src="assets/images/Asset-11ldpi.png"/>
                   </p>
                 </div>
               </div>
@@ -100,17 +96,12 @@ const Loyalty = () => {
             </div>
 
             <p className="d-block mx-auto text-center my-3">
-              <a
-                href="#"
-                className="button btn btn-dark text-uppercase px-5 my-4 fs-4 text-white rounded-5"
-              >
-                Redeem
-              </a>
+             <img src="assets/images/Asset-10ldpi.png" className="star1"/>
             </p>
           </div>
         </section>
 
-        <section className="section py-5" style={{ background: "#d1c7f0" }}>
+        <section className="section py-5" style={{ background: "#c3effb" }}>
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-md-12 mb-3">
@@ -172,48 +163,44 @@ const Loyalty = () => {
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w1.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-2ldpi.png"
+                      className="img-fluid mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">$1=1 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Make a Purhcase</p>
+               
                 </div>
               </div>
               <div className="col-md-3 text-center bg-white mb-3 ">
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w2.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-1ldpi.png"
+                      className="img-fluid mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">20 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Create a Account</p>
+                 
                 </div>
               </div>
               <div className="col-md-3 text-center bg-white mb-3 ">
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w3.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-4ldpi.png"
+                      className="img-fluid  mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">250 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Birthday Awards</p>
+                 
                 </div>
               </div>
               <div className="col-md-3 text-center bg-white mb-3 ">
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w4.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-3ldpi.png"
+                      className="img-fluid  mb-3"
                     />
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">10 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Leave a review</p>
+              
                 </div>
               </div>
 
@@ -221,48 +208,44 @@ const Loyalty = () => {
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w5.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-8ldpi.png"
+                      className="img-fluid  mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">5 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Add a Photo in review</p>
+              
                 </div>
               </div>
               <div className="col-md-3 text-center bg-white mb-3">
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w6.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-7ldpi.png"
+                      className="img-fluid  mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">5 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Add a video in review</p>
+                
                 </div>
               </div>
               <div className="col-md-3 text-center bg-white mb-3">
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w7.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-6ldpi.png"
+                      className="img-fluid  mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">10 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Follow on us Tiktok</p>
+            
                 </div>
               </div>
               <div className="col-md-3 text-center bg-white mb-3">
                 <div className="border  px-3 py-5 earn">
                   <p className="fs-1 fw-semibold mb-0">
                     <img
-                      src="assets/images/w8.png"
-                      className="img-fluid star mb-3"
+                      src="assets/images/Asset-5ldpi.png"
+                      className="img-fluid  mb-3"
                     />{" "}
                   </p>
-                  <p className="fs-2 mb-0 fw-bold">10 POINTS</p>
-                  <p className="lh-md fs-5 text-dark">Follow on us Instagram</p>
+                
                 </div>
               </div>
             </div>
@@ -273,21 +256,21 @@ const Loyalty = () => {
           <div
             className="container-fluid rounded-5 py-5"
             style={{
-              background: "#4f3c97",
+              background: "#c3effb",
             }}
           >
             <div className="row justify-content-center py-5">
               <div className="col-md-12 mb-3">
                 <div className="section-heading">
-                  <h3 className="theme-bg-text text-white mb-2">VIP Program </h3>
+                  <h3 className="theme-bg-text text-dark mb-2">VIP Program </h3>
                 </div>
               </div>
               <div className="row px-md-5 ">
                 <div className="col-md-4 px-3  ">
-                  <div className="  py-3 mx-2 bg-white mb-3">
+                  <div className="  py-3 mx-2 bg-pin mb-3">
                     <img
                       src="assets/images/t1.png"
-                      className="img-fluid star2 mb-3 px-3"
+                      className="img-fluid star-2 mb-3 px-3"
                     />
                     <p className="fs-1 fw-bold t-yello mb-0 text-center text-uppercase">
                       Snow Sprint
@@ -301,10 +284,10 @@ const Loyalty = () => {
                   </div>
                 </div>
                 <div className="col-md-4 px-3  ">
-                  <div className="  py-3 mx-2 bg-white mb-3">
+                  <div className="  py-3 mx-2 bg-pin mb-3">
                     <img
                       src="assets/images/t2.png"
-                      className="img-fluid star2 mb-3 px-3"
+                      className="img-fluid star-2 mb-3 px-3"
                     />
                     <p className="fs-1 fw-bold t-pink mb-0 text-center text-uppercase">
                       Snow Fairy
@@ -318,10 +301,10 @@ const Loyalty = () => {
                   </div>
                 </div>
                 <div className="col-md-4 px-3  ">
-                  <div className="  py-3 mx-2 bg-white mb-3">
+                  <div className="  py-3 mx-2 bg-pin mb-3">
                     <img
                       src="assets/images/t3.png"
-                      className="img-fluid star2 mb-3 px-3"
+                      className="img-fluid star-2 mb-3 px-3"
                     />
                     <p className="fs-1 fw-bold t-blue mb-0 text-center text-uppercase">
                       Snow Angal
@@ -350,16 +333,16 @@ const Loyalty = () => {
             <div className="row text-center mt-3 mb-5">
               <div className="">
                 <div class="d-inline p-2 t-purple fs-1 mx-3">
-                  <i className="fab px-1 fa-facebook" />
+                  <img src="assets/images/Asset-15ldpi.png"
+                  className="star3"/>
                 </div>
                 <div class="d-inline p-2 t-purple fs-1 mx-3">
-                  <i className="fab px-1 fa-linkedin-in" />
+                <img src="assets/images/Asset-14ldpi.png"
+                 className="star2"/>
                 </div>
                 <div class="d-inline p-2 t-purple fs-1 mx-3">
-                  <i className="fab px-1 fa-twitter" />
-                </div>
-                <div class="d-inline p-2 t-purple fs-1 mx-3">
-                  <i className="fab px-1 fa-instagram" />
+                   <img src="assets/images/Asset-13ldpi.png"
+                    className="star2"/>
                 </div>
 
 
