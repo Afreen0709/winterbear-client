@@ -22,7 +22,21 @@ const Footer = () => {
       <footer className="footercard">
         <div className="container">
           <div className="row">
-            <div className="col-md-4">
+            <div className='col-md-3 text-start '>
+            <div className="col-md-12 text-white">
+              <img src={require("../constant/images/footer-logo.png")} className="img-fluid w-75 pb-2" loading="lazy"/>
+              <p>Official BT21 &amp; LINE FRIENDS <br/> Merchandise in India</p>
+            </div>
+             <p className='text-white'>  <i className="fa-solid fa-phone-volume" /> +91-9035576906</p>
+             <p className='text-white'> <i className="fa-regular fa-envelope" /> hello@winterbear.in</p>
+             <span className="mt-4 text-white social">
+                  <i className="fab fa-facebook" />
+                  <i className="fab fa-twitter" />
+                  <i className="fab fa-linkedin-in" />
+                  <i className="fab fa-instagram" />
+                </span>
+            </div>
+            <div className="col-md-3">
               <div className="footer-heading">
                 <h4 className='mx-5'>Quick links</h4>
                 <div className="row">
@@ -65,7 +79,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="footer-heading">
                 <h4>Important links</h4>
                 <ul className=''>
@@ -84,7 +98,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="footer-heading">
                 <h4>Shop by</h4>
                 <div className="row">
@@ -115,10 +129,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-12 text-center text-white">
-              <img src={require("../constant/images/footer-logo.png")} className="img-fluid" loading="lazy"/>
-              <p>Official BT21 &amp; LINE FRIENDS Merchandise in India</p>
-            </div>
+           
           </div>
         </div>
       </footer>

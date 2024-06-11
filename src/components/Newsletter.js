@@ -24,20 +24,7 @@ const Newsletter = () => {
                   Subscribe
                 </button>
               </form>
-              <div className="row mt-4 justify-content-center">
-                <div className="col-md-4 text-white">
-                  <i className="fa-solid fa-phone-volume" /> +91-9035576906
-                </div>
-                <div className="col-md-4 text-white">
-                  <i className="fa-regular fa-envelope" /> hello@winterbear.in
-                </div>
-                <span className="mt-4 text-white social">
-                  <i className="fab fa-facebook" />
-                  <i className="fab fa-twitter" />
-                  <i className="fab fa-linkedin-in" />
-                  <i className="fab fa-instagram" />
-                </span>
-              </div>
+             
             </div>
           </div>
         </div>
