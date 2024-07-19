@@ -9,16 +9,18 @@ import {
   RatingProductUserById,
   fetchProductData,
   GetAddCardProductById,
-  GetCardProductById
+  GetCardProductById,
+  AddWishlistFetch,
 } from "../../src/reducer/thunks";
 import { useDispatch, useSelector } from "react-redux";
+
 import constant from "../constant/constant";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Nav, Tab } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { message, Rate,notification,Image } from "antd";
+import { message, Rate, notification, Image } from "antd";
 import MultiCarousel from "../components/MultiCarousel";
 import { HeartOutlined, ShareAltOutlined } from "@ant-design/icons";
 import Copyimage from "../constant/images/Copy.svg";
@@ -75,7 +77,6 @@ const Product = () => {
   };
 
   const [messageApi, contextHolder] = message.useMessage();
-
 
   const {
     productlist,
@@ -146,13 +147,22 @@ const Product = () => {
     // navigate(`/product/${newProductId}`);
   };
 
+  const handleWishlists = async (prod_id) => {
+    if (userId) {
+      const passbody = { userId: userId, productId: prod_id };
+      await dispatch(AddWishlistFetch(passbody));
+    } else {
+      message.error(`Please log in to Wishlist the product.`);
+    }
+  };
+
   const renderProductImages = () => {
     const product = GetProductIdResponse?.Products || {};
 
     return (
       <>
         <OwlCarousel
-          className="owl-theme "
+          className="owl-theme pos-rel"
           loop
           margin={10}
           items={1}
@@ -162,15 +172,30 @@ const Product = () => {
         >
           {product?.images &&
             product?.images.map((image, index) => (
-              <div key={index} className="item mb-4 mb-0">
+              <div key={index} className="item mb-4 mb-0 hertbtn1">
                 <Image
                   src={`${image}`}
                   height={500}
-                  
                   alt={`Product Image ${index}`}
                   className="product-img-main rounded sing-prod"
                   loading="lazy"
                 />
+
+                <button
+                  class="heart-btn "
+                  id="hertbtn"
+                  onClick={() => {
+                    handleWishlists(product._id);
+                  }}
+                >
+                  {wishlist?.wishlistItems?.some(
+                    (item) => item.productId === product._id
+                  ) ? (
+                    <HeartButton isActives={true} />
+                  ) : (
+                    <HeartButton isActives={false} />
+                  )}
+                </button>
               </div>
             ))}
         </OwlCarousel>
@@ -185,22 +210,21 @@ const Product = () => {
         </div>
         <div className="d-flex justify-content-center">
           {product && product?.images && product?.images.length > 1 && (
-            <MultiCarousel images={product?.images} indexs={(item)=>{
-              console.log(item,"item");
-              setSelecteditem(item)
-            }}/>
+            <MultiCarousel
+              images={product?.images}
+              indexs={(item) => {
+                console.log(item, "item");
+                setSelecteditem(item);
+              }}
+            />
           )}
         </div>
-
-       
       </>
     );
   };
 
-  
-
   const addcard = async (id) => {
-    success(`Successfully Added to Cart: ${id.name}`)
+    success(`Successfully Added to Cart: ${id.name}`);
     if (userId) {
       let addcarditem = {
         userId: userId,
@@ -209,22 +233,21 @@ const Product = () => {
       };
       await dispatch(AddCardProductById(addcarditem));
       await dispatch(GetAddCardProductById(userId));
-  
     } else {
       const passbody = {
         userId: userId,
         productId: id._id,
         quantity: 1, // Use number for quantity
       };
-  
+
       let getlistcarts = localStorage.getItem("cardstore");
-      console.log(getlistcarts,"getlistcarts");
+      console.log(getlistcarts, "getlistcarts");
       let addtocarts = [];
-  
+
       if (getlistcarts) {
         addtocarts = JSON.parse(getlistcarts);
       }
-  
+
       // Check if the product already exists in the cart
       let productExists = false;
       addtocarts = addtocarts.map((item) => {
@@ -237,13 +260,13 @@ const Product = () => {
         }
         return item;
       });
-  
+
       // If the product does not exist, add it to the cart
       if (!productExists) {
         addtocarts.push(passbody);
       }
       if (getlistcarts) {
-        const productIds =  {productIds :addtocarts}
+        const productIds = { productIds: addtocarts };
         console.log(productIds);
         dispatch(GetCardProductById(productIds));
       }
@@ -251,10 +274,9 @@ const Product = () => {
     }
   };
 
-  
   const success = (items) => {
     messageApi.open({
-      type: 'loading',
+      type: "loading",
       content: items,
       duration: 0,
     });
@@ -320,22 +342,41 @@ const Product = () => {
                   </button>
                 ))}
 
-<button type="button" className="btn siz-btnn" data-bs-toggle="modal"                   data-bs-target="#exampleModal">
+                <button
+                  type="button"
+                  className="btn siz-btnn"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
                   Size Chart
                 </button>
                 <div className="size-chart">
-                  <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div
+                    className="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true"
+                  >
                     <div className="modal-dialog modal-xl">
                       <div className="modal-content">
                         <div className="modal-header">
-                          <h1 className="modal-title fs-5" id="exampleModalLabel">Size Chart</h1>
-                          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <h1
+                            className="modal-title fs-5"
+                            id="exampleModalLabel"
+                          >
+                            Size Chart
+                          </h1>
+                          <button
+                            type="button"
+                            className="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
                         </div>
                         <div className="modal-body">
                           <div className="row">
                             <div className="col-lg-12">
-
-
                               <div class="table-responsive">
                                 <table class="table table-striped table-bordered">
                                   <thead class="thead-dark">
@@ -388,42 +429,60 @@ const Product = () => {
                               </div>
                             </div>
                             <div className="col-lg-6">
-
                               <div className="cont">
-                                <h5>
-                                  Full Sleeve Shirts
-                                </h5>
+                                <h5>Full Sleeve Shirts</h5>
 
                                 <p>
-
-                                  Not sure about your shirt size? Follow these simple steps to figure it out: Shoulder - Measure the shoulder at the back, from edge to edge with arms relaxed on both sides Chest - Measure around the body under the arms at the fullest part of the chest with your arms relaxed at both sides. Sleeve - Measure from the shoulder seam through the outer arm to the cuff/hem Neck - Measured horizontally across the neck Length - Measure from the highest point of the shoulder seam to the bottom hem of the garment's
-
+                                  Not sure about your shirt size? Follow these
+                                  simple steps to figure it out: Shoulder -
+                                  Measure the shoulder at the back, from edge to
+                                  edge with arms relaxed on both sides Chest -
+                                  Measure around the body under the arms at the
+                                  fullest part of the chest with your arms
+                                  relaxed at both sides. Sleeve - Measure from
+                                  the shoulder seam through the outer arm to the
+                                  cuff/hem Neck - Measured horizontally across
+                                  the neck Length - Measure from the highest
+                                  point of the shoulder seam to the bottom hem
+                                  of the garment's
                                 </p>
                               </div>
                             </div>
                             <div className="col-lg-6">
-                              <img src={shirtimg} className="w-50 d-block mx-auto" alt="" />
-
+                              <img
+                                src={shirtimg}
+                                className="w-50 d-block mx-auto"
+                                alt=""
+                              />
                             </div>
                             <div className="col-lg-6">
                               <div className="cont pt-4">
-                                <h5>
-                                  Half Sleeve Shirts
-                                </h5>
+                                <h5>Half Sleeve Shirts</h5>
 
                                 <p>
-
-                                  Not sure about your shirt size? Follow these simple steps to figure it out: Shoulder - Measure the shoulder at the back, from edge to edge with arms relaxed on both sides Chest - Measure around the body under the arms at the fullest part of the chest with your arms relaxed at both sides. Sleeve - Measure from the shoulder seam through the outer arm to the cuff/hem Neck - Measured horizontally across the neck Length - Measure from the highest point of the shoulder seam to the bottom hem of the garment's
-
+                                  Not sure about your shirt size? Follow these
+                                  simple steps to figure it out: Shoulder -
+                                  Measure the shoulder at the back, from edge to
+                                  edge with arms relaxed on both sides Chest -
+                                  Measure around the body under the arms at the
+                                  fullest part of the chest with your arms
+                                  relaxed at both sides. Sleeve - Measure from
+                                  the shoulder seam through the outer arm to the
+                                  cuff/hem Neck - Measured horizontally across
+                                  the neck Length - Measure from the highest
+                                  point of the shoulder seam to the bottom hem
+                                  of the garment's
                                 </p>
                               </div>
-
                             </div>
                             <div className="col-lg-6">
-                              <img src={shirtimg1} className="w-50 d-block mx-auto" alt="" />
+                              <img
+                                src={shirtimg1}
+                                className="w-50 d-block mx-auto"
+                                alt=""
+                              />
                             </div>
                           </div>
-
                         </div>
                         {/* <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -433,7 +492,6 @@ const Product = () => {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           )}
@@ -539,8 +597,10 @@ const Product = () => {
                 <div className="text-start col-md-12 row mt-5">
                   <div className="col-md-5 sku-tag feature-item ">
                     <h4>Description</h4>
-                    <div>{product.description && product.description.replaceAll(/\\n/g, ' ')}</div>
-                   
+                    <div>
+                      {product.description &&
+                        product.description.replaceAll(/\\n/g, " ")}
+                    </div>
                   </div>
                   <div className="col-md-4 sku-tag feature-item ">
                     <h4>Feature</h4>
@@ -800,7 +860,7 @@ const Product = () => {
 
   return (
     <>
-        {contextHolder}
+      {contextHolder}
       <Header />
       <section className="py-5 mt-80">
         <div className="container">

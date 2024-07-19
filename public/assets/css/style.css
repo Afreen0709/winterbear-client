@@ -3644,3 +3644,11 @@ th {
 .tooltip-inner {
   background-color: transparent;
 }
+#hertbtn1{
+position: relative;
+}
+#hertbtn{
+  position: absolute;
+  left: 80%;
+  color: #000;
+}

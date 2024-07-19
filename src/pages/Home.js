@@ -342,7 +342,9 @@ const Home2 = () => {
                                       </p>
                                     )}
 
-                                  <div></div>
+                                  <div>
+                                    
+                                  </div>
 
                                   <button
                                     className="heart-btn"
