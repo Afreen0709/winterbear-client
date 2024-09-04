@@ -379,7 +379,7 @@ input {
 
 .heart-btn i {
   background-color: white;
-  padding: 25%;
+  /* padding: 25%; */
   font-size: 20px;
   border-radius: 50%;
 }
@@ -438,11 +438,11 @@ input {
   margin-right: 10px;
 }
 
-footer {
+/* footer {
 
   padding: 60px 0 150px 0;
 
-}
+} */
 
 .p-text:hover {
   font-weight: 500 !important;
@@ -491,7 +491,7 @@ footer ul a {
 }
 
 .copy-rights-img {
-  height: 18vh;
+  /* height: 18vh; */
   position: relative;
 }
 
@@ -649,6 +649,16 @@ footer ul a {
   border-bottom: 1px solid #888;
   padding-bottom: 50px;
 }
+.tile-11 {
+  /*height: 80vh;*/
+  height: auto;
+  padding-top: 20px;
+  border-radius: 20px;
+  border-bottom: 1px solid #888;
+  padding-bottom: 50px;
+  color:#DAEEEF;
+  background-color: #2D2F46;
+}
 
 @media only screen and(min-width:760px) {
   .tile-1 .item {
@@ -684,6 +694,11 @@ footer ul a {
 
 .product-shopby {
   height: 150px !important;
+  object-fit: contain !important;
+  transition: transform 0.7s ease;
+}
+.product-shopby1 {
+  height: 142px !important;
   object-fit: contain !important;
   transition: transform 0.7s ease;
 }
@@ -2734,6 +2749,12 @@ a {
 .home-product-in {
   overflow: visible;
   border: 4px solid black;
+  text-align: center;
+}
+.home-product-in1 {
+  overflow: visible;
+  border: 4px solid #DAEEEF;
+  text-align: center;
 }
 
 .shop-online-brand {
@@ -3814,8 +3835,20 @@ th {
 
 .item {
   flex: 0 0 auto;
+  /* width: 20%; */
   /* These styles ensure each item takes up a specific amount of space and doesn't shrink or grow */
 }
+.item1 {
+  flex: 0 0 auto;
+  width: 20%;
+  /* These styles ensure each item takes up a specific amount of space and doesn't shrink or grow */
+}
+.item3 {
+  flex: 0 0 auto;
+  width: 33%;
+  /* These styles ensure each item takes up a specific amount of space and doesn't shrink or grow */
+}
+
 
 
     
