@@ -655,9 +655,19 @@ footer ul a {
   padding-top: 20px;
   border-radius: 20px;
   border-bottom: 1px solid #888;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   color:#DAEEEF;
   background-color: #2D2F46;
+}
+.tile-12 {
+  /*height: 80vh;*/
+  height: auto;
+  padding-top: 20px;
+  border-radius: 20px;
+  border-bottom: 1px solid #888;
+  padding-bottom: 20px;
+  color:#2D2F46;
+  background-color: #DAEEEF ;
 }
 
 @media only screen and(min-width:760px) {
@@ -2751,9 +2761,16 @@ a {
   border: 4px solid black;
   text-align: center;
 }
+.home-product-in11 {
+  overflow: visible;
+  border: 4px solid black;
+  text-align: center;
+  background-color: white;
+}
 .home-product-in1 {
   overflow: visible;
   border: 4px solid #DAEEEF;
+  background-color: white;
   text-align: center;
 }
 
@@ -3784,6 +3801,10 @@ th {
   min-width: 200px; /* Fixed width for each category item */
   flex: 0 0 auto; /* Prevents items from shrinking */
 }
+.category-item1 {
+  min-width: 100%; /* Fixed width for each category item */
+  flex: 0 0 auto; /* Prevents items from shrinking */
+}
 
 .heading {
   font-size: 24px;
@@ -3843,12 +3864,25 @@ th {
   width: 20%;
   /* These styles ensure each item takes up a specific amount of space and doesn't shrink or grow */
 }
+.item-card {
+  flex: 0 0 auto;
+  width: 20%;
+  background-color: #DAEEEF;
+  padding: 19px 0px;
+  margin: 0px 13px;
+  /* These styles ensure each item takes up a specific amount of space and doesn't shrink or grow */
+}
 .item3 {
   flex: 0 0 auto;
   width: 33%;
   /* These styles ensure each item takes up a specific amount of space and doesn't shrink or grow */
 }
-
+.btn-rd{
+  margin: 25px;
+  padding: 10px 15px;
+  border-radius: 21px;
+  font-weight: 600;
+}
 
 
     
