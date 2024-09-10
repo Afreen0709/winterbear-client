@@ -186,7 +186,7 @@ const Home = () => {
        <BrandSlider />
        }</div> */}
 
-      <section className="py-5 mt-4">
+      <section className="pt-5 mt-4">
         <div className="container-fluid">
           <h1 className="text-center">TOP BRANDS</h1>
           <div className="category-slider">
@@ -414,46 +414,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <section>
-        <div className="container">
-          \
-          <div className="row d-flex justify-content-center my-4 cl-blue py-3">
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-          </div>
-          <h1 className="text-center">CHOOSE YOUR STYLE</h1>
-          <div className="row d-flex justify-content-center my-4 cl-blue py-3">
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-          </div>
-        </div>
-      </section> */}
+    
 
       <section>{/* <SnsSl /> */}</section>
 
@@ -656,10 +617,10 @@ const Home = () => {
             style={{ backgroundColor: "#dbeff2" }}
           >
             <h1 className="text-start ms-lg-4">MYSTERY BOX</h1>
-            <div className="col-4">
+            <div className="col-lg-4 col-12 text-center">
               <img className="w-75" src="../assets/images/bag1.png" />
             </div>
-            <div className="col-6">
+            <div className="col-lg-6 col-12">
               {" "}
               <div className="row justify-content-center">
                 {productOldlist &&
@@ -758,7 +719,7 @@ const Home = () => {
                                           ? prod.images[0]
                                           : "assets/images/Rectangle 22.png"
                                       }
-                                      className="product-shopby1 img-fluid"
+                                      className="product-shopby img-fluid product-shop-h"
                                       alt={prod.name}
                                       loading="lazy"
                                       onClick={() => handleNavigation(prod._id)}
@@ -969,7 +930,7 @@ const Home = () => {
                           .slice(0, visibleProducts[item.brand._id] || 8)
                           .map((prod, ind) => (
                             <div
-                              className="item-card col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4 w-25"
+                              className="item-card col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4 "
                               onMouseEnter={() => setHoveredProductId(prod._id)}
                               onMouseLeave={() => setHoveredProductId(null)}
                               key={ind}
@@ -1023,7 +984,7 @@ const Home = () => {
                                         ? prod.images[0]
                                         : "assets/images/Rectangle 22.png"
                                     }
-                                    className="product-shopby img-fluid"
+                                    className="product-shopby img-fluid product-shop-h"
                                     alt={prod.name}
                                     loading="lazy"
                                     onClick={() => handleNavigation(prod._id)}
@@ -1089,7 +1050,7 @@ const Home = () => {
             style={{ backgroundColor: "#2D2F46" }}
           >
             <h1 className="text-center text-white py-3">MEMBERSHIP REWARDS</h1> 
-            <div className="col-6">
+            <div className="col-lg-6 col-12">
               {" "}
               <div className="row justify-content-center">
                 {productOldlist &&
@@ -1188,7 +1149,7 @@ const Home = () => {
                                           ? prod.images[0]
                                           : "assets/images/Rectangle 22.png"
                                       }
-                                      className="product-shopby1 img-fluid"
+                                      className="product-shopby img-fluid product-shop-h"
                                       alt={prod.name}
                                       loading="lazy"
                                       onClick={() => handleNavigation(prod._id)}
@@ -1280,7 +1241,7 @@ const Home = () => {
                   })}
               </div>
             </div>
-            <div className="col-4">
+            <div className="col-lg-4 col-12 text-center">
               <img className="w-50 h-75" src="../assets/images/mouse-icons.png" />
             </div>
 

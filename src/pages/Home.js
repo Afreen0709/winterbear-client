@@ -185,39 +185,39 @@ const Home2 = () => {
        }</div> */}
       <section>
         <div className="container">
-          \
+          
           <div className="row d-flex justify-content-center my-4 cl-blue py-3">
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-1.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-2.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-1.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-2.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-1.png" />
             </div>
           </div>
           <h1 className="text-center">CHOOSE YOUR STYLE</h1>
           <div className="row d-flex justify-content-center my-4 cl-blue py-3">
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-1.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-2.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-1.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-2.png" />
             </div>
-            <div className="col-lg-2">
+            <div className="col-lg-2 col-12 text-center">
               <img className="w-75" src="../assets/images/look-1.png" />
             </div>
           </div>
