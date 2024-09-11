@@ -168,6 +168,14 @@ const Home2 = () => {
     }
   };
 
+  const imageData = [
+    { id: 1, src: "../assets/images/look-1.png", alt: "Look 1" },
+    { id: 2, src: "../assets/images/look-2.png", alt: "Look 2" },
+    { id: 3, src: "../assets/images/look-1.png", alt: "Look 1" },
+    { id: 4, src: "../assets/images/look-2.png", alt: "Look 2" },
+    { id: 5, src: "../assets/images/look-1.png", alt: "Look 1" }
+  ];
+
   const loadAllProducts = (brandId) => {
     navigate(`/brand/${brandId}`);
   };
@@ -183,46 +191,28 @@ const Home2 = () => {
       {/* <div className="pt-md-5">{data && data.Brands &&
        <BrandSlider />
        }</div> */}
-      <section>
-        <div className="container">
-          
-          <div className="row d-flex justify-content-center my-4 cl-blue py-3">
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-1.png" />
+     <section>
+      <div className="container">
+        
+        <div className="row d-flex justify-content-center my-4 cl-blue py-3">
+          {imageData.map((image) => (
+            <div key={image.id} className="col-lg-2 col-12 text-center">
+              <img className="w-75" src={image.src} alt={image.alt} />
             </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-          </div>
-          <h1 className="text-center">CHOOSE YOUR STYLE</h1>
-          <div className="row d-flex justify-content-center my-4 cl-blue py-3">
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-2.png" />
-            </div>
-            <div className="col-lg-2 col-12 text-center">
-              <img className="w-75" src="../assets/images/look-1.png" />
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+        
+        <h1 className="text-center">CHOOSE YOUR STYLE</h1>
+        
+        <div className="row d-flex justify-content-center my-4 cl-blue py-3">
+          {imageData.map((image) => (
+            <div key={image.id} className="col-lg-2 col-12 text-center">
+              <img className="w-75" src={image.src} alt={image.alt} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
     
 
       <section>{/* <SnsSl /> */}</section>

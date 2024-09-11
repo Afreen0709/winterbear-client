@@ -14,19 +14,22 @@ import {
 } from "../reducer/thunks";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import HeartButton from "../components/heartbutton";
-import "./innerstyle.css";
 import { message } from "antd";
 import SplashScreen from "../components/SplashScreen";
-import SnsSl from "../components/SnsSl";
+
 const Home3 = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [visibleProducts, setVisibleProducts] = useState({}); // Initial number of products to display for each brand
   const userId = localStorage.getItem("userId");
+
+  // States to handle dynamic data
+  const [blogs, setBlogs] = useState([]);
+  const [events, setEvents] = useState([]);
+  const [storeLocations, setStoreLocations] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState("");
 
+  // Redux state selectors
   const { data, loading: bannerLoading, error: bannerError } = useSelector(
     (state) => state.data
   );
@@ -47,10 +50,46 @@ const Home3 = () => {
   useEffect(() => {
     dispatch(fetchBannerData());
     dispatch(fetchProductDataOld());
-    if (userId !== undefined && userId !== null) {
+
+    if (userId) {
       dispatch(fetchWishlistData(userId));
     }
+
+    // Fetch dynamic content such as blogs, events, and store locations
+    fetchBlogs();
+    fetchEvents();
+    fetchStoreLocations();
   }, [dispatch, userId]);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await fetch("/api/blogs"); // Fetch from API or data source
+      const data = await response.json();
+      setBlogs(data);
+    } catch (error) {
+      console.error("Failed to fetch blogs:", error);
+    }
+  };
+
+  const fetchEvents = async () => {
+    try {
+      const response = await fetch("/api/events");
+      const data = await response.json();
+      setEvents(data);
+    } catch (error) {
+      console.error("Failed to fetch events:", error);
+    }
+  };
+
+  const fetchStoreLocations = async () => {
+    try {
+      const response = await fetch("/api/store-locations");
+      const data = await response.json();
+      setStoreLocations(data);
+    } catch (error) {
+      console.error("Failed to fetch store locations:", error);
+    }
+  };
 
   const success = (items) => {
     messageApi.open({
@@ -58,7 +97,6 @@ const Home3 = () => {
       content: items,
       duration: 0,
     });
-    // Dismiss manually and asynchronously
     setTimeout(messageApi.destroy, 2500);
   };
 
@@ -75,44 +113,6 @@ const Home3 = () => {
     }
   };
 
-  useEffect(() => {
-    const handleSticky = () => {
-      const stickyElements = document.querySelectorAll(".sticky-logo-2");
-
-      stickyElements.forEach((element) => {
-        const offset = element.offsetTop;
-
-        if (window.pageYOffset > offset) {
-          element.classList.add("sticky");
-        } else {
-          element.classList.remove("sticky");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleSticky);
-
-    return () => {
-      window.removeEventListener("scroll", handleSticky);
-    };
-  }, []);
-
-  const loadMoreOrLessProducts = (brandId) => {
-    setVisibleProducts((prevState) => {
-      const currentCount = prevState[brandId] || 8;
-      let newState = { ...prevState };
-
-      if (currentCount + 4 <= 12) {
-        newState[brandId] = currentCount + 4;
-      } else {
-        const { [brandId]: _, ...rest } = prevState;
-        newState = rest;
-      }
-
-      return newState;
-    });
-  };
-
   const addcard = async (id) => {
     success(`Successfully Added to Cart: ${id.name}`);
     if (userId) {
@@ -123,15 +123,12 @@ const Home3 = () => {
       };
       await dispatch(AddCardProductById(addcarditem));
       await dispatch(GetAddCardProductById(userId));
-
-      // message.success(`Successfully Added to Cart: ${id.name}`);
     } else {
       const passbody = {
         userId: userId,
         productId: id._id,
         quantity: 1, // Use number for quantity
       };
-
       let getlistcarts = localStorage.getItem("cardstore");
       let addtocarts = [];
 
@@ -139,7 +136,6 @@ const Home3 = () => {
         addtocarts = JSON.parse(getlistcarts);
       }
 
-      // Check if the product already exists in the cart
       let productExists = false;
       addtocarts = addtocarts.map((item) => {
         if (item.productId === id._id) {
@@ -152,7 +148,6 @@ const Home3 = () => {
         return item;
       });
 
-      // If the product does not exist, add it to the cart
       if (!productExists) {
         addtocarts.push(passbody);
       }
@@ -163,14 +158,9 @@ const Home3 = () => {
         const productIds = { productIds: addtocarts };
         dispatch(GetCardProductById(productIds));
       }
-
-      // message.success(`Successfully Added to Cart: ${id.name}`);
     }
   };
 
-  const loadAllProducts = (brandId) => {
-    navigate(`/brand/${brandId}`);
-  };
   if (!data) {
     return <SplashScreen />;
   }
@@ -179,42 +169,60 @@ const Home3 = () => {
     <>
       {contextHolder}
       <Header />
-      {/* {data && data.banners &&
-      <HomeSlider />
-      } */}
-      {/* <div className="pt-md-5">{data && data.Brands &&
-       <BrandSlider />
-       }</div> */}
 
       <section className="py-5 mt-4">
         <div className="container-fluid">
           <h1 className="text-start">EVENTS & BLOGS</h1>
-
           <div className="category-slider1">
-           <div className="d-flex justify-content-between"> <h5 className="my-3">LATEST BLOG POST</h5>
-           <h5 className="my-3"><a className="link-underline-secondary text-dark">Explore blog posts</a></h5></div>
-           <img className="w-100 " src="assets/images/new-ban.png" />
+            <div className="d-flex justify-content-between">
+              <h5 className="my-3">LATEST BLOG POST</h5>
+              <h5 className="my-3">
+                <a className="link-underline-secondary text-dark">Explore blog posts</a>
+              </h5>
+            </div>
+
+            {/* Dynamically display blog posts */}
+            {blogs.length > 0 ? (
+              blogs.map((blog, index) => (
+                <div key={index} className="w-100">
+                  <img className="w-100" src={blog.image} alt={blog.title} />
+                  <p>{blog.title}</p>
+                </div>
+              ))
+            ) : (
+              // <p>No blog posts available</p>
+              <img className="w-100 " src="assets/images/new-ban.png" />
+            )}
           </div>
         </div>
       </section>
 
       <section className="pb-5 mt-4">
         <div className="container-fluid">
-          <h1 className="text-start">EVENTS & BLOGS</h1>
-
+          <h1 className="text-start">NEW STORE LOCATIONS</h1>
           <div className="category-slider1">
-           <div className="d-flex justify-content-between"> <h5 className="my-3">NEW STORE LOCATION</h5>
-           <h5 className="my-3"><a className="link-underline-secondary text-dark">View more events</a></h5></div>
-           <img className="w-100" src="assets/images/new-ban1.png" />
+            <div className="d-flex justify-content-between">
+              <h5 className="my-3">NEW STORE LOCATION</h5>
+              <h5 className="my-3">
+                <a className="link-underline-secondary text-dark">View more events</a>
+              </h5>
+            </div>
+
+            {/* Dynamically display store locations */}
+            {storeLocations.length > 0 ? (
+              storeLocations.map((store, index) => (
+                <div key={index} className="w-100">
+                  <img className="w-100" src={store.image} alt={store.name} />
+                  <p>{store.name}</p>
+                </div>
+              ))
+            ) : (
+              // <p>No store locations available</p>
+              <img className="w-100" src="assets/images/new-ban1.png" />
+            )}
           </div>
         </div>
       </section>
-    
-   
-     
-
-
-    
 
       <Footer className="pt-3" />
     </>
