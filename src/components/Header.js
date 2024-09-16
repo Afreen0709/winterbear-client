@@ -186,7 +186,7 @@ const Header = () => {
       <header>
         {/* Top Header */}
         <div
-          className={`top-header shadow-sm bg-white fixed-top ${navbarBg === "d-none" && "bg-white top-headers"
+          className={`top-header shadow-sm fixed-top ${navbarBg === "d-none" && "bg-white top-headers"
             }`}
         >
           <div className="container-fluid">
