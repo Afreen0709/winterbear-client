@@ -355,7 +355,7 @@ const Header = () => {
                       id="offcanvasExampleLabel"
                     >
                       <img
-                        src={require("../constant/images//Winterbear-Logo.webp")}
+                        src={require("../constant/images/Winterbear-Logo.webp")}
                         className="d-block ps-md-2 img-fluid my-5 "
                         alt="Logo"
                         loading="lazy"

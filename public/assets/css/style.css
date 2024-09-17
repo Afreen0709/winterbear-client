@@ -35,7 +35,7 @@ body {
 
 .header-logo {
   width: 100%;
-  filter: invert(1);
+  /* filter: invert(1); */
 }
 
 .main-header {
@@ -1200,7 +1200,7 @@ width: 77%;
 }
 
 .text-main {
-  color: #221A42 !important;
+  color: white !important;
 }
 
 .half-width-bg-left {
@@ -3582,16 +3582,13 @@ th {
   .ant-select-selector {
     width: 200px;
   }
-
 }
 
 @media only screen and (min-width:760px) {
   .product-shop-h{
-    height: 180px !important;
+    height: 160px !important;
   }
 }
-
-
 
 /* side nav for brands */
 
@@ -3629,15 +3626,12 @@ th {
   display: none;
 }
 
-
 .search-a:hover .mob-search {
   display: block;
   top: 25%;
   position: absolute;
   right: 10%;
 }
-
-
 
 .cat-brand {
   font-size: 15px;
@@ -3661,13 +3655,10 @@ th {
     padding-top: 15px;
   }
 
-
-
   .sidenav a {
     font-size: 18px;
   }
 }
-
 
 .loy-lis-fs {
   font-size: 14px;
