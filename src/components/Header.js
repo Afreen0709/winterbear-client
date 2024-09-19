@@ -217,7 +217,7 @@ const Header = () => {
                       </button>
                     </div>
                     <div className="col-md-11 d-md-block d-none pe-0 ">
-                      <div className="d-flex justify-content-end">
+                      <div className="d-flex justify-content-end align-items-center">
                         <div
                           id="menu-products"
                           className=" fs-6 text-main text-decoration-none"
