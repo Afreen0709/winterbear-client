@@ -168,7 +168,7 @@ const Home3 = () => {
   return (
     <>
       {contextHolder}
-      <Header />
+      {/* <Header /> */}
 
       <section className="py-5 mt-4">
         <div className="container-fluid">
@@ -224,7 +224,7 @@ const Home3 = () => {
         </div>
       </section>
 
-      <Footer className="pt-3" />
+      {/* <Footer className="pt-3" /> */}
     </>
   );
 };

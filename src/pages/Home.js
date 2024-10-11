@@ -19,9 +19,11 @@ import "./innerstyle.css";
 import { message } from "antd";
 import SplashScreen from "../components/SplashScreen";
 import SnsSl from "../components/SnsSl";
+import Home2 from "./Home2";
+import Home3 from "./Home3";
 
 
-const Home2 = () => {
+const Home = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -829,10 +831,12 @@ const Home2 = () => {
           </div>
         </div>
       </section>
+      <Home2/>
+      <Home3/>
 
       <Footer />
     </>
   );
 };
 
-export default Home2;
+export default Home;

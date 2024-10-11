@@ -19,7 +19,7 @@ import "./innerstyle.css";
 import { message } from "antd";
 import SplashScreen from "../components/SplashScreen";
 import SnsSl from "../components/SnsSl";
-const Home = () => {
+const Home2 = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -178,7 +178,7 @@ const Home = () => {
   return (
     <>
       {contextHolder}
-      <Header />
+      {/* <Header /> */}
       {/* {data && data.banners &&
       <HomeSlider />
       } */}
@@ -1254,9 +1254,9 @@ const Home = () => {
         </div>
       </section>
 
-      <Footer className="pt-3" />
+      {/* <Footer className="pt-3" /> */}
     </>
   );
 };
 
-export default Home;
+export default Home2;
