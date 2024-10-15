@@ -213,7 +213,7 @@ const Header = () => {
                         aria-controls="offcanvasExample"
 
                       >
-                        <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon" style={{filter:"invert(1)"}}></span>
                       </button>
                     </div>
                     <div className="col-md-11 d-md-block d-none pe-0 ">
@@ -594,6 +594,7 @@ const Header = () => {
                             <a
                               href="/cart"
                               className="text-decoration-none mx-2"
+                             
                             >
                               <Tooltip title="My Cart" color={"#4e3c98"} >
                                 <Badge count={GetAddcardUserRes?.AddCarts?.length || 0}>

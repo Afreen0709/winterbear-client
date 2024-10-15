@@ -186,9 +186,9 @@ const Home2 = () => {
        <BrandSlider />
        }</div> */}
 
-      <section className="pt-5 mt-4">
+      <section className="py-5">
         <div className="container-fluid">
-          <h1 className="text-center">TOP BRANDS</h1>
+          <h1 className="text-start ms-5">TOP BRANDS</h1>
           <div className="category-slider">
             {data &&
               data.Brands &&
@@ -221,7 +221,7 @@ const Home2 = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="section-heading">
-                <h1 className="text-start ms-lg-3">OUR CHOICE</h1>
+                <h1 className="text-start ms-5">OUR CHOICE</h1>
               </div>
             </div>
           </div>
@@ -613,10 +613,10 @@ const Home2 = () => {
             </div>
           </div>
           <div
-            className="row d-flex justify-content-evenly align-items-center py-2"
+            className="row d-flex justify-content-evenly align-items-center py-5"
             style={{ backgroundColor: "#dbeff2" }}
           >
-            <h1 className="text-start ms-lg-4">MYSTERY BOX</h1>
+            <h1 className="text-start ms-5">MYSTERY BOX</h1>
             <div className="col-lg-4 col-12 text-center">
               <img className="w-75" src="../assets/images/bag1.png" />
             </div>
@@ -658,6 +658,7 @@ const Home2 = () => {
                           className="container-fluid shop-by tile-11 px-lg-4 px-0"
                           id={`sticky1${index}`}
                         >
+                          <h3 className="ms-5">WHAT'S INSIDE</h3>
                           {/* <div className="container-fluid">
                         <ul
                           className="nav nav-pills nav-fill shop-by-tab py-3 mb-4"
@@ -1137,7 +1138,7 @@ const Home2 = () => {
                                   onMouseLeave={() => setHoveredProductId(null)}
                                   key={ind}
                                 >
-                                  <div className="home-product-in11">
+                                  <div className="home-product-in11-1">
                                     <img
                                       src={
                                         hoveredProductId === prod._id &&
@@ -1191,14 +1192,14 @@ const Home2 = () => {
                                   </button> */}
                                     </div>
 
-                                    <div className="mt-4 col-md-12 price-prodname">
+                                    {/* <div className="mt-4 col-md-12 price-prodname">
                                       <p className="text-start prize-size mb-0">
                                         {prod.name}
                                       </p>
                                       <p className="prod-pric mb-0">
                                         ₹{prod.amount}
                                       </p>
-                                    </div>
+                                    </div> */}
                                   </div>
                                 </div>
                               ))}

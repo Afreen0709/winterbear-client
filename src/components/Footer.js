@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <>
       <Newsletter />
-      <footer className="footercard">
+      <footer className="footercard py-5">
         <div className="container d-lg-block d-none">
           <div className="row">
             <div className="col-md-4">

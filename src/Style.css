@@ -272,7 +272,7 @@ input {
 
 @media only screen and (max-width: 767px) {
     .news-latter-bg {
-        background-color: #33295d;
+        background-color: white;
         background-size: cover;
         background-repeat: no-repeat;
         height: 100%;

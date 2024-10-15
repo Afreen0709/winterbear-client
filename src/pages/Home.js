@@ -412,8 +412,8 @@ const Home = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-12">
-              <div className="section-heading">
-                <h1 className="text-center">NEW ARRIVAL</h1>
+              <div className="section-heading1">
+                <h1 className="text-start ms-5">NEW ARRIVAL</h1>
               </div>
             </div>
           </div>
@@ -608,7 +608,7 @@ const Home = () => {
 
       <section className="py-5">
         <div className="container-fluid">
-          <h1 className="text-center">TOP CATEGORIES </h1>
+          <h1 className="text-start ms-5">TOP CATEGORIES </h1>
           <div className="category-slider">
             {data &&
               data.Categorys &&
@@ -639,7 +639,7 @@ const Home = () => {
           <div className="row">
             <div className="col-md-12">
               <div className="section-heading">
-                <h1 className="text-start ms-lg-3">BEST SELLER</h1>
+                <h1 className="text-start ms-5">BEST SELLER</h1>
               </div>
             </div>
           </div>

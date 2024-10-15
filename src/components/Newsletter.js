@@ -3,14 +3,14 @@ import React from "react";
 const Newsletter = () => {
   return (
     <>
-      <section className="py-5 news-latter-bg">
+      <section className="pb-5 news-latter-bg">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-8">
               <div className="section-heading">
-                <h3>Subscribe to Our Newsletter</h3>
+                <h3 className="text-dark">Subscribe to Our Newsletter</h3>
               </div>
-              <p className="text-white px-5">
+              <p className="text-dark px-5">
               Be among the first to stay updated on our latest collections, exclusive offers, and other special perks by subscribing to our newsletter!
               </p>
               <form className="d-flex align-items-center justify-content-center">
@@ -25,13 +25,13 @@ const Newsletter = () => {
                 </button>
               </form>
               <div className="row mt-4 justify-content-center">
-                <div className="col-md-4 text-white">
+                <div className="col-md-4 text-dark">
                   <i className="fa-solid fa-phone-volume" /> +91-9035576906
                 </div>
-                <div className="col-md-4 text-white">
+                <div className="col-md-4 text-dark">
                   <i className="fa-regular fa-envelope" /> hello@winterbear.in
                 </div>
-                <span className="mt-4 text-white social">
+                <span className="mt-4 text-dark social">
                   <i className="fab fa-facebook" />
                   <i className="fab fa-twitter" />
                   <i className="fab fa-linkedin-in" />
