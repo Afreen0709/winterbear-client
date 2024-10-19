@@ -351,7 +351,7 @@ const Header = () => {
                 >
                   <div className="offcanvas-header">
                     <div
-                      className="offcanvas-title text-center "
+                      className="offcanvas-title text-center"
                       id="offcanvasExampleLabel"
                     >
                       <img
@@ -363,7 +363,7 @@ const Header = () => {
                     </div>
                     <button
                       type="button"
-                      className="btn-close"
+                      className="btn-close cart-sty"
                       data-bs-dismiss="offcanvas"
                       aria-label="Close"
                     ></button>
@@ -594,7 +594,7 @@ const Header = () => {
                             <a
                               href="/cart"
                               className="text-decoration-none mx-2"
-                             
+                           
                             >
                               <Tooltip title="My Cart" color={"#4e3c98"} >
                                 <Badge count={GetAddcardUserRes?.AddCarts?.length || 0}>
@@ -667,7 +667,7 @@ const Header = () => {
                             </a>
                             <a
                               href="/cart"
-                              className="text-decoration-none ps-3"
+                              className="text-decoration-none ps-3 cart-sty"
                             >
                               <Badge count={GetAddcardUserRes?.AddCarts?.length || 0}>
                                 <img src="../assets/images/icon_cart.svg" loading="lazy" />

@@ -3920,7 +3920,9 @@ th {
   border-radius: 21px;
   font-weight: 600;
 }
-
+.cart-sty{
+  filter: invert(1);
+}
 
 
 

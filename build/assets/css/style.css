@@ -3739,7 +3739,9 @@ th {
      
     }
 
-
+.cart-sty{
+  filter: invert(1);
+}
     
    
   
