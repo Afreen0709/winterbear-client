@@ -492,7 +492,7 @@ const Home = () => {
                       </div> */}
                       <div className="portfolio mx-lg-3 ml-3 row flex-nowrap overflow-auto">
                         {item.products
-                          .slice(0, visibleProducts[item.brand._id] || 8)
+                          .slice(1, visibleProducts[item.brand._id] || 10)
                           .map((prod, ind) => (
                             <div
                               className="item1 col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4"
@@ -718,7 +718,7 @@ const Home = () => {
                       </div> */}
                       <div className="portfolio mx-lg-3 ml-3 row flex-nowrap overflow-auto">
                         {item.products
-                          .slice(0, visibleProducts[item.brand._id] || 8)
+                          .slice(10, visibleProducts[item.brand._id] || 20  )
                           .map((prod, ind) => (
                             <div
                               className="item1 col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4"

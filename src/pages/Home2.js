@@ -300,7 +300,7 @@ const Home2 = () => {
                       </div> */}
                       <div className="portfolio mx-lg-3 ml-3 row flex-nowrap overflow-auto">
                         {item.products
-                          .slice(0, visibleProducts[item.brand._id] || 8)
+                          .slice(20, visibleProducts[item.brand._id] || 30)
                           .map((prod, ind) => (
                             <div
                               className="item1 col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4"
@@ -698,7 +698,7 @@ const Home2 = () => {
                       </div> */}
                           <div className="portfolio mx-lg-3 ml-3 row flex-nowrap overflow-auto">
                             {item.products
-                              .slice(0, visibleProducts[item.brand._id] || 8)
+                              .slice(30, visibleProducts[item.brand._id] || 40)
                               .map((prod, ind) => (
                                 <div
                                   className="item3 col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4"
@@ -928,7 +928,7 @@ const Home2 = () => {
                       </div> */}
                       <div className="portfolio mx-lg-3 ml-3 row flex-nowrap overflow-auto">
                         {item.products
-                          .slice(0, visibleProducts[item.brand._id] || 8)
+                          .slice(40, visibleProducts[item.brand._id] || 50 )
                           .map((prod, ind) => (
                             <div
                               className="item-card col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4 "
@@ -1128,7 +1128,7 @@ const Home2 = () => {
                       </div> */}
                           <div className="portfolio mx-lg-3 ml-3 row flex-nowrap overflow-auto">
                             {item.products
-                              .slice(0, visibleProducts[item.brand._id] || 8)
+                              .slice(50, visibleProducts[item.brand._id] || 58)
                               .map((prod, ind) => (
                                 <div
                                   className="item3 col-lg-3 col-6 position-relative mb-3 home-product px-0 px-4"
