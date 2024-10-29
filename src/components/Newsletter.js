@@ -8,7 +8,7 @@ const Newsletter = () => {
           <div className="row justify-content-center">
             <div className="col-md-8">
               <div className="section-heading">
-                <h3 className="text-dark">Subscribe to Our Newsletter</h3>
+                <h3 className="text-dark"> Newsletter Subscribe</h3>
               </div>
               <p className="text-dark px-5">
               Be among the first to stay updated on our latest collections, exclusive offers, and other special perks by subscribing to our newsletter!
@@ -32,10 +32,10 @@ const Newsletter = () => {
                   <i className="fa-regular fa-envelope" /> hello@winterbear.in
                 </div>
                 <span className="mt-4 text-dark social">
-                  <i className="fab fa-facebook" />
-                  <i className="fab fa-twitter" />
-                  <i className="fab fa-linkedin-in" />
-                  <i className="fab fa-instagram" />
+                  <i className="fab rnd-bord p-2 fa-facebook" />
+                  <i className="fab rnd-bord p-2 fa-twitter" />
+                  <i className="fab rnd-bord p-2 fa-linkedin-in" />
+                  <i className="fab rnd-bord p-2 fa-instagram" />
                 </span>
               </div>
             </div>

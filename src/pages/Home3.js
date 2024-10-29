@@ -199,7 +199,7 @@ const Home3 = () => {
 
       <section className="pb-5 mt-4">
         <div className="container-fluid">
-          <h1 className="text-start">NEW STORE LOCATIONS</h1>
+          {/* <h1 className="text-start">NEW STORE LOCATIONS</h1> */}
           <div className="category-slider1">
             <div className="d-flex justify-content-between">
               <h5 className="my-3">NEW STORE LOCATION</h5>

@@ -757,5 +757,11 @@ width: 77%;
 .shop-online-brand {max-height: 60px !important;}
 .shopall-menu {margin-top: 105px !important;}
 
+.rnd-bord{
+    padding: 10px !important;
+    border-radius: 20px !important;
+    border: 1px solid black !important;
+}
+
 
 

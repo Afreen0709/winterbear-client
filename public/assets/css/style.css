@@ -3923,6 +3923,11 @@ th {
 .cart-sty{
   filter: invert(1);
 }
+.rnd-bord{
+  padding: 10px !important;
+  border-radius: 25px !important;
+  border: 1px solid black !important;
+}
 
 
 

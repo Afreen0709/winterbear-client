@@ -24,11 +24,12 @@ const Footer = () => {
       <footer className="footercard py-5">
         <div className="container d-lg-block d-none">
           <div className="row">
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="footer-heading">
-                <h4 className='mx-5'>Quick links</h4>
+                
                 <div className="row">
-                  <div className="col-md-6 col-6">
+                <h4 className=''>Quick links</h4>
+                  <div className="col-md-12 col-6">
                     <ul>
                       <li>
                         <a href="/"> Home</a>
@@ -48,9 +49,18 @@ const Footer = () => {
                       <li>
                         <a href="/blogs">Blogs</a>
                       </li>
+                      <li>
+                        <a href="/account">my account</a>
+                      </li>
+                      <li>
+                        <a href="/wishlist">wishlist</a>
+                      </li>
+                      <li>
+                        <a href="/stores">our stores</a>
+                      </li>
                     </ul>
                   </div>
-                  <div className="col-md-6 col-6">
+                  {/* <div className="col-md-6 col-6">
                     <ul>
                       <li>
                         <a href="/account">my account</a>
@@ -63,11 +73,11 @@ const Footer = () => {
                       </li>
 
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="footer-heading">
                 <h4>Important links</h4>
                 <ul className=''>
@@ -86,9 +96,9 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-3">
               <div className="footer-heading">
-                <h4>Shop by</h4>
+                <h4>Shop</h4>
                 <div className="row">
                   <div className="col-md-12 col-6">
                     <ul>
@@ -117,6 +127,37 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+            <div className="col-md-3">
+              <div className="footer-heading">
+                <h4>TRENDING</h4>
+                <ul className=''>
+                  <li>
+                    <a href="">ANIME</a>
+                  </li>
+                  <li>
+                    <a href="">OVERSIZED T-SHIRT</a>
+                  </li>
+                  <li>
+                    <a href="">BOTTOMS WOMEN</a>
+                  </li>
+                  <li>
+                    <a href="">SWEATSHIRT</a>
+                  </li>
+                  <li>
+                    <a href="">HOODIES</a>
+                  </li>
+                  <li>
+                    <a href="">KIDS</a>
+                  </li>
+                  <li>
+                    <a href="">K-POP</a>
+                  </li>
+                  <li>
+                    <a href="">MANGA</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
             {/* <div className="col-md-12 text-center text-white">
               <img src={require("../constant/images/footer-logo.png")} className="img-fluid" loading="lazy" />
               <p>Official BT21 &amp; LINE FRIENDS Merchandise in India</p>
@@ -134,8 +175,8 @@ const Footer = () => {
             <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
               <div class="accordion-body cm-bg-sty">
                 <div className="row">
-                  <div className="col-md-6 col-6">
-                    <ul>
+                  <div className="col-md-12 col-6">
+                  <ul>
                       <li>
                         <a href="/"> Home</a>
                       </li>
@@ -154,10 +195,6 @@ const Footer = () => {
                       <li>
                         <a href="/blogs">Blogs</a>
                       </li>
-                    </ul>
-                  </div>
-                  <div className="col-md-6 col-6">
-                    <ul>
                       <li>
                         <a href="/account">my account</a>
                       </li>
@@ -167,9 +204,9 @@ const Footer = () => {
                       <li>
                         <a href="/stores">our stores</a>
                       </li>
-
                     </ul>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -203,7 +240,7 @@ const Footer = () => {
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button cm-bg-sty collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                <h4> Shop By</h4>
+                <h4> Shop</h4>
               </button>
             </h2>
             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
@@ -228,6 +265,44 @@ const Footer = () => {
                     <li>
                       <a href="#">naruto</a>
                     </li> */}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button cm-bg-sty collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <h4>TRENDING</h4>
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body cm-bg-sty">
+            
+                <ul className=''>
+                  <li>
+                    <a href="">ANIME</a>
+                  </li>
+                  <li>
+                    <a href="">OVERSIZED T-SHIRT</a>
+                  </li>
+                  <li>
+                    <a href="">BOTTOMS WOMEN</a>
+                  </li>
+                  <li>
+                    <a href="">SWEATSHIRT</a>
+                  </li>
+                  <li>
+                    <a href="">HOODIES</a>
+                  </li>
+                  <li>
+                    <a href="">KIDS</a>
+                  </li>
+                  <li>
+                    <a href="">K-POP</a>
+                  </li>
+                  <li>
+                    <a href="">MANGA</a>
+                  </li>
                 </ul>
               </div>
             </div>
