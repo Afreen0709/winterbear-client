@@ -1,9 +1,9 @@
-import React from 'react';
-import Newsletter from './Newsletter';
+import React from "react";
+import Newsletter from "./Newsletter";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import footerimg from '../constant/images/footer-img.png';
+import footerimg from "../constant/images/footer-img.png";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -26,9 +26,8 @@ const Footer = () => {
           <div className="row">
             <div className="col-md-3">
               <div className="footer-heading">
-                
                 <div className="row">
-                <h4 className=''>Quick links</h4>
+                  <h4 className="">Quick links</h4>
                   <div className="col-md-12 col-6">
                     <ul>
                       <li>
@@ -80,7 +79,7 @@ const Footer = () => {
             <div className="col-md-3">
               <div className="footer-heading">
                 <h4>Important links</h4>
-                <ul className=''>
+                <ul className="">
                   <li>
                     <a href="/privacy">privacy policy</a>
                   </li>
@@ -104,10 +103,16 @@ const Footer = () => {
                     <ul>
                       {productOldlist?.productList?.slice(0, 8).map((item) => (
                         <li key={item.brand.id}>
-                          <a href="" onClick={() => handleNavigationbrand(item.brand._id)}>{item.brand.name}</a>
+                          <a
+                            href=""
+                            onClick={() =>
+                              handleNavigationbrand(item.brand._id)
+                            }
+                          >
+                            {item.brand.name}
+                          </a>
                         </li>
                       ))}
-
 
                       {/* <li>
                       <a href="#">line friends</a>
@@ -123,14 +128,13 @@ const Footer = () => {
                     </li> */}
                     </ul>
                   </div>
-
                 </div>
               </div>
             </div>
             <div className="col-md-3">
               <div className="footer-heading">
                 <h4>TRENDING</h4>
-                <ul className=''>
+                <ul className="">
                   <li>
                     <a href="">ANIME</a>
                   </li>
@@ -162,21 +166,35 @@ const Footer = () => {
               <img src={require("../constant/images/footer-logo.png")} className="img-fluid" loading="lazy" />
               <p>Official BT21 &amp; LINE FRIENDS Merchandise in India</p>
             </div> */}
+            <hr className="text-light border-3" />
+            <p className="text-end text-white">SECURE PAYMENTS</p>
+            
           </div>
         </div>
 
         <div class="accordion d-block d-lg-none" id="accordionExample">
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button cm-bg-sty" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button
+                class="accordion-button cm-bg-sty"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
                 <h4>Quick links</h4>
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
               <div class="accordion-body cm-bg-sty">
                 <div className="row">
                   <div className="col-md-12 col-6">
-                  <ul>
+                    <ul>
                       <li>
                         <a href="/"> Home</a>
                       </li>
@@ -206,21 +224,30 @@ const Footer = () => {
                       </li>
                     </ul>
                   </div>
-                  
                 </div>
               </div>
             </div>
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button cm-bg-sty collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <button
+                class="accordion-button cm-bg-sty collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
                 <h4>Important links</h4>
               </button>
             </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
               <div class="accordion-body cm-bg-sty">
-
-                <ul className=''>
+                <ul className="">
                   <li>
                     <a href="/privacy">privacy policy</a>
                   </li>
@@ -239,19 +266,34 @@ const Footer = () => {
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button cm-bg-sty collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <button
+                class="accordion-button cm-bg-sty collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
                 <h4> Shop</h4>
               </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
               <div class="accordion-body cm-bg-sty">
                 <ul>
                   {productOldlist?.productList?.slice(0, 8).map((item) => (
                     <li key={item.brand.id}>
-                      <a href="" onClick={() => handleNavigationbrand(item.brand._id)}>{item.brand.name}</a>
+                      <a
+                        href=""
+                        onClick={() => handleNavigationbrand(item.brand._id)}
+                      >
+                        {item.brand.name}
+                      </a>
                     </li>
                   ))}
-
 
                   {/* <li>
                       <a href="#">line friends</a>
@@ -271,14 +313,24 @@ const Footer = () => {
           </div>
           <div class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button cm-bg-sty collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              <h4>TRENDING</h4>
+              <button
+                class="accordion-button cm-bg-sty collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                <h4>TRENDING</h4>
               </button>
             </h2>
-            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
               <div class="accordion-body cm-bg-sty">
-            
-                <ul className=''>
+                <ul className="">
                   <li>
                     <a href="">ANIME</a>
                   </li>
@@ -309,15 +361,14 @@ const Footer = () => {
           </div>
 
           <div className="col-md-12 text-center text-white mt-4">
-            <img src={require("../constant/images/footer-logo.png")} className="img-fluid" loading="lazy" />
+            <img
+              src={require("../constant/images/footer-logo.png")}
+              className="img-fluid"
+              loading="lazy"
+            />
             <p>Official BT21 &amp; LINE FRIENDS Merchandise in India</p>
           </div>
-
         </div>
-
-
-
-
       </footer>
       {/* <div className="copy-rights-img">
         <div className="container">
@@ -336,7 +387,6 @@ const Footer = () => {
         </div>
       </div> */}
     </>
-
   );
 };
 

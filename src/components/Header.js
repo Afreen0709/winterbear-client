@@ -539,7 +539,7 @@ const Header = () => {
                               className="link-body-emphasis text-decoration-none"
                             >
                               {/* <WalletOutlined style={{ fontSize: '16px', color: '#9E2717', marginRight: '5px' }} /> */}
-                              <Tooltip title="Bear club" color={"#4e3c98"} >
+                              <Tooltip title="Bear club" color={"#4e3c98"} className="text-white" >
                                 <i
                                   class="fa-solid fa-star"
                                   style={{ color: "#ffdc64" }}
@@ -556,8 +556,8 @@ const Header = () => {
                               <Tooltip title="My WishList" color={"#4e3c98"} >
                                 <div>
                                   <i
-                                    class="fa-regular fa-bookmark"
-                                    style={{ fontSize: "20px" }}
+                                    class="fa-regular fa-bookmark text-white"
+                                    style={{ fontSize: "20px;" }}
                                   ></i>
                                 </div>
 
@@ -598,7 +598,7 @@ const Header = () => {
                             >
                               <Tooltip title="My Cart" color={"#4e3c98"} >
                                 <Badge count={GetAddcardUserRes?.AddCarts?.length || 0}>
-                                  <img src="../assets/images/icon_cart.svg" loading="lazy" />
+                                  <img className="cart-sty" src="../assets/images/icon_cart.svg" loading="lazy" />
 
                                 </Badge>
 
@@ -667,10 +667,10 @@ const Header = () => {
                             </a>
                             <a
                               href="/cart"
-                              className="text-decoration-none ps-3 cart-sty"
+                              className="text-decoration-none ps-3"
                             >
-                              <Badge count={GetAddcardUserRes?.AddCarts?.length || 0}>
-                                <img src="../assets/images/icon_cart.svg" loading="lazy" />
+                              <Badge count={GetAddcardUserRes?.AddCarts?.length || 0} >
+                                <img className="cart-sty" src="../assets/images/icon_cart.svg" loading="lazy"/>
 
                               </Badge>
                               {/* <i className="fa-solid fa-bag-shopping" /> */}
